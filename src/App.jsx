@@ -72,6 +72,7 @@ export default function () {
     useEffect(() => {
       const promise = tauriEvent.listen('longRunningThread', ({payload}) => {
         console.log(payload.message);
+        
       });
       return () => promise.then(unlisten => unlisten());
     }, []);
